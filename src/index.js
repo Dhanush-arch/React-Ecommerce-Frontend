@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createStore, applyMiddleware } from 'redux';
+import {createStore, applyMiddleware , compose} from 'redux';
 import {Provider } from  'react-redux';
-import sampleReducer from './reducers/samplereducer'
+import loginReducer from './reducers/loginReducer'
 import thunk from 'redux-thunk'
 
-const store = createStore(sampleReducer, applyMiddleware(thunk))
+const store = createStore(loginReducer, applyMiddleware(thunk))
 
 
 ReactDOM.render(

@@ -1,0 +1,10 @@
+.cst-nav{
+  display: flex;
+  align-items: center;
+  /* opacity: 0.9; */
+}
+
+.cst-right{
+  position: absolute;
+  right: 0;
+}
