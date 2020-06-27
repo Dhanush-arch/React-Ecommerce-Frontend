@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import sampleAction from './actions/sampleaction'
+import {connect} from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  handleClick = (e) => {
+    this.props.sampleaction()
+  }
+  render(){
+    return(
+      <div className='App'>
+        <button onClick={this.handleClick}>
+          text
+        </button>
+        <h1>{this.props.keys}</h1>
+      </div>
+  )
+}
 }
 
-export default App;
+const mapStateTorProps = (state) =>{
+  return {
+    keys : state.key,
+    islogedin : state.islogedin,
+  }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+  return{
+    sampleaction: () => {dispatch(sampleAction())}
+  }
+}
+export default connect(mapStateTorProps,mapDispatchToProps)(App);
