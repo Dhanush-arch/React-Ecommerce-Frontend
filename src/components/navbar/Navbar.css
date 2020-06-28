@@ -8,3 +8,13 @@
   position: absolute;
   right: 0;
 }
+
+.user-icon{
+  height:35px;
+}
+
+.cart-icon{
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

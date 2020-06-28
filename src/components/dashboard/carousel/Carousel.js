@@ -1,17 +1,19 @@
 import React from 'react'
-
+import Img1 from '../../../assets/Img4.jpg'
+import Img2 from '../../../assets/img2.jpg'
+import Img3 from '../../../assets/img3.jpg'
 function Carousel() {
     return (
-      <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
+      <div id="carouselExampleFade" className="carousel slide carousel-fade w-50" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="..." className="d-block w-100" alt="..."/>
+            <img src={Img1} className="d-block w-100" alt="..."/>
           </div>
           <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..."/>
+            <img src={Img2}  className="d-block w-100" alt="..."/>
           </div>
           <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..."/>
+            <img src={Img3}  className="d-block w-100" alt="..."/>
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

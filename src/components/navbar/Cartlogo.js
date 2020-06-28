@@ -3,7 +3,7 @@ import Cartlogopic from '../../assets/cartlogo.png'
 function Cartlogo() {
     return (
         <div>
-            <img src={Cartlogopic} alt="userlogo"/>
+            <img className="cart-icon" src={Cartlogopic} alt="userlogo"/>
         </div>
     )
 }

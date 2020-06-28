@@ -3,7 +3,7 @@ import Userlogopic from '../../assets/userlogo.png'
 function Userlogo() {
     return (
         <div>
-            <img src={Userlogopic} alt="userlogo"/>
+            <img className="user-icon"src={Userlogopic} alt="userlogo"/>
         </div>
     )
 }

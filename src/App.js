@@ -1,11 +1,14 @@
 import React from 'react';
-import './App.css';
+
 import loginAction from './actions/loginAction'
 import {connect} from 'react-redux'
 
 import Navbar from './components/navbar/Navbar'
-import Sidebar from './components/dashboard/sidebar/Sidebar'
-import Dashboard from './components/dashboard/Dashboard'
+import Sidebar from './components/sidebar/Sidebar'
+import Breadcrumb from './components/dashboard/Breadcrumb/Breadcrumb'
+import Home from './components/home/Home'
+
+import './App.css';
 
 class App extends React.Component {
 
@@ -14,15 +17,22 @@ class App extends React.Component {
   }
   render(){
     return(
-      <div className='App'>
-      <Navbar />
       <div className="row">
-        <Sidebar className='col'/>
-        <Dashboard className='col'/>
-        {/* <button className="btn btn-primary mt-10" onClick={this.handleClick}>
-          text
-        </button>
-        <h1>{this.props.keys}</h1> */}
+        <div className="col-md-2 pr-0 pl-0">
+          <Sidebar />
+        </div>
+        <div className="col-md-10 pr-0 pl-0">
+          <div className="row">
+            <div className="col-md-12">
+              <Navbar/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <Breadcrumb />
+            </div>
+          </div>
+          <Home/>
         </div>
       </div>
   )
@@ -42,3 +52,10 @@ const mapDispatchToProps = (dispatch) =>{
   }
 }
 export default connect(mapStateTorProps,mapDispatchToProps)(App);
+
+
+
+// {/* <button className="btn btn-primary mt-10" onClick={this.handleClick}>
+//    text
+//  </button>
+//  <h1>{this.props.keys}</h1> */}

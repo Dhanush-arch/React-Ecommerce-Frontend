@@ -1,26 +1,28 @@
 .sidebar{
-  /* min-height: 100%; */
-  height: 200vh;
-  width:200px;
-  display: grid;
+  background-image: url('../../assets/sidebarpic.jpg');
+  background-size:cover;
+  height: 100%;
+  /* width:154.67px; */
+  overflow-y: hidden;
   position: fixed;
-  background-image: url('../../../assets/sidebarpic.jpg');
-  background-size: cover;
+
 }
 
 .sidebar-container{
   background-color: black;
   opacity: 0.8;
+  height: 100%;
+  overflow-y: hidden;
 }
 
 .menu-items{
-  display: grid;
+  padding-left: 20px;
   margin-top: 10px;
   list-style: none;
 }
 
 .menu-items li{
-  font-size:1.3rem;
+  font-size:1.1rem;
   border-bottom: 2px solid white;
 }
 
