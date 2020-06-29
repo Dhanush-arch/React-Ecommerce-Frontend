@@ -9,6 +9,7 @@ import Breadcrumb from './components/dashboard/Breadcrumb/Breadcrumb'
 import Footer from './components/dashboard/Footer/Footer'
 import Home from './components/home/Home'
 import ProductPage from './components/ProductPage/ProductPage'
+import OrderPage from './components/OrderPage/OrderPage'
 import './App.css';
 
 class App extends React.Component {
@@ -33,8 +34,9 @@ class App extends React.Component {
               <Breadcrumb />
             </div>
           </div>
-            <ProductPage/>
+            {/* <ProductPage/> */}
             {/* <Home/> */}
+          <OrderPage />
             <div className="row">
               <div className="col-md-12">
                 <Footer />
