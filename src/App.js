@@ -6,8 +6,9 @@ import {connect} from 'react-redux'
 import Navbar from './components/navbar/Navbar'
 import Sidebar from './components/sidebar/Sidebar'
 import Breadcrumb from './components/dashboard/Breadcrumb/Breadcrumb'
+import Footer from './components/dashboard/Footer/Footer'
 import Home from './components/home/Home'
-
+import ProductPage from './components/ProductPage/ProductPage'
 import './App.css';
 
 class App extends React.Component {
@@ -32,7 +33,13 @@ class App extends React.Component {
               <Breadcrumb />
             </div>
           </div>
-          <Home/>
+            <ProductPage/>
+            {/* <Home/> */}
+            <div className="row">
+              <div className="col-md-12">
+                <Footer />
+              </div>
+            </div>
         </div>
       </div>
   )
@@ -59,3 +66,7 @@ export default connect(mapStateTorProps,mapDispatchToProps)(App);
 //    text
 //  </button>
 //  <h1>{this.props.keys}</h1> */}
+
+
+
+// Home component :  <Home/>

@@ -4,7 +4,7 @@ function Footer() {
     return (
         <div className="sticky-footer">
           <hr/>
-          <h3 className="footer">Footer</h3>
+          <h3 className="footer">Amazon</h3>
           <p className="footer">Copyrights owned by www.html.com</p>
         </div>
     )
