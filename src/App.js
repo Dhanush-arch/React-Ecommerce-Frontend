@@ -17,33 +17,14 @@ class App extends React.Component {
   handleClick = (e) => {
     this.props.loginaction()
   }
+  
+
   render(){
     return(
-      <div className="row">
-        <div className="col-md-2 pr-0 pl-0">
-          <Sidebar />
+      <div>
+        <Sidebar/>
+
         </div>
-        <div className="col-md-10 pr-0 pl-0">
-          <div className="row">
-            <div className="col-md-12">
-              <Navbar/>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-6">
-              <Breadcrumb />
-            </div>
-          </div>
-            {/* <ProductPage/> */}
-            {/* <Home/> */}
-          <OrderPage />
-            <div className="row">
-              <div className="col-md-12">
-                <Footer />
-              </div>
-            </div>
-        </div>
-      </div>
   )
 }
 }

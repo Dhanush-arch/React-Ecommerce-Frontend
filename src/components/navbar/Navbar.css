@@ -1,12 +1,19 @@
-.cst-nav{
+
+.cst-nav-end{
+  display: flex;
+  position: fixed;
+  /* width:100%; */
+  right: 0;
+}
+
+.cst-left{
   display: flex;
   align-items: center;
-  /* opacity: 0.9; */
 }
 
 .cst-right{
-  position: absolute;
-  right: 0;
+  /* position: absolute; */
+  /* right: 0; */
 }
 
 .user-icon{
