@@ -1,9 +1,10 @@
 
 .cst-nav-end{
   display: flex;
-  position: fixed;
+  position: absolute;
   /* width:100%; */
   right: 0;
+  /* transform: translate(-71%); */
 }
 
 .cst-left{
@@ -24,4 +25,15 @@
   height: 35px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+@media screen and (max-width:750px){
+  .cst-nav-end{
+    display: flex;
+    position: absolute;
+    /* width:100%; */
+    right: 0;
+    /* transform: translate(-1%); */
+  }
+
 }

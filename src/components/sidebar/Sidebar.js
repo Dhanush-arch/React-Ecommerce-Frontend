@@ -5,6 +5,9 @@ import Signup from '../navbar/Signup'
 import Userlogo from '../navbar/Userlogo'
 import Cartlogo from '../navbar/Cartlogo'
 import Breadcrumb from '../dashboard/Breadcrumb/Breadcrumb'
+import Searchbar from '../dashboard/Searchbar/Searchbar'
+import Footer from '../dashboard/Footer/Footer'
+import Home from '../home/Home'
 
 import './Sidebar.css'
 
@@ -27,7 +30,7 @@ import './Sidebar.css'
 function Sidebar() {
     return (
       <div className="main row">
-        <div className="sidebar" id="sidebar-id">
+        <div className="sidebar " id="sidebar-id">
           <ul>
             <li>
               <button className="btn btn-info close-btn pt-4" id="close-btn" onClick={handlecloseclick}>
@@ -49,7 +52,7 @@ function Sidebar() {
             <button className="btn btn-info open-btn" id="op-btn" onClick={handleopenClick}>
               <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
-            <a className="navbar-brand " href="/home"><h4 className="mt-1 pt-1">Amazon</h4></a>
+            <a className="navbar-brand " href="/home"><h4 className="mt-1 pt-1 pl-2">Amazon</h4></a>
           </div>
           <div className="cst-nav-end cst-right pr-3 py-2">
 
@@ -62,20 +65,18 @@ function Sidebar() {
           </nav>
         </div>
         <div className="row">
-          <div className="col-6">
+          <div className="col-md-5 col-sm-6 col-xs-6">
             <Breadcrumb/>
           </div>
         </div>
         <div className="row">
-          <div className="col-6">
-            <Breadcrumb/>
+          <div className="col-md-12 col-sm-12">
+            <Searchbar />
           </div>
         </div>
-        <div className="row">
-          <div className="col-6">
-            <Breadcrumb/>
-          </div>
-        </div>
+          <hr/>
+        <Home/>
+        <Footer />
       </div>
     </div>
     )

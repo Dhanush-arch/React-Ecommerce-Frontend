@@ -4,7 +4,7 @@ import Img1 from '../../../assets/img3.jpg'
 import './products.css'
 function ProductItem() {
     return (
-      <div class="col-mb-4">
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-4">
          <div class="card">
            <img src={Img1} class="card-img-top" alt="..."/>
            <div class="card-body">

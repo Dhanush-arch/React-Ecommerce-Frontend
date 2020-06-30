@@ -5,15 +5,7 @@ import Products from '../dashboard/Products/Products'
 class Home extends Component {
     render() {
         return (
-          <div>
-            <div className="row">
-              <div className="col-md-12">
-                <Searchbar />
-              </div>
-            </div>
-            <hr/>
               <Products />
-          </div>
         )
     }
 }

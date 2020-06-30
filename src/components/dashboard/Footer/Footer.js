@@ -2,10 +2,10 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className="sticky-footer">
+        <div className="sticky-footer text-center">
           <hr/>
-          <h3 className="footer">Amazon</h3>
-          <p className="footer">Copyrights owned by www.html.com</p>
+          <h3>Amazon</h3>
+          <p>Copyrights owned by www.html.com</p>
         </div>
     )
 }
