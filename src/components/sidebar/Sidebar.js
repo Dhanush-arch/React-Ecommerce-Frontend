@@ -10,7 +10,7 @@ import Footer from '../dashboard/Footer/Footer'
 // Replacables
 import Home from '../home/Home'
 import ProductPage from '../ProductPage/ProductPage'
-
+import OrderPage from '../OrderPage/OrderPage'
 
 import './Sidebar.css'
 
@@ -78,8 +78,9 @@ function Sidebar() {
           </div>
         </div>
           <hr/>
-        {/* <Home/>*/}
-        <ProductPage/>
+        {/* <Home/> */}
+        {/* <ProductPage/> */}
+        <OrderPage/>
         <Footer />
       </div>
     </div>

@@ -1,3 +1,7 @@
-.my-row-cst{
-  min-height: 60vh; 
+.order-row{
+  max-width: 540px;
+}
+
+.order-col{
+  min-width:100px
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // s.no Date Product-Name Price Status
-
+import Img from '../../assets/img3.jpg'
 
 class OrderItem extends Component {
     render() {
@@ -10,10 +10,11 @@ class OrderItem extends Component {
               <p>1</p>
             </div>
             <div className="col-2">
-              <p>26.06.2020</p>
+              <p>27/01/2020</p>
             </div>
             <div className="col-3">
-              <p>Macbook Pro Retina 2017 Model</p>
+              <img className="w-50"src={Img} alt=".."/>
+              <p>Macbook pro</p>
             </div>
             <div className="col-2">
               <p>1</p>
