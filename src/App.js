@@ -4,7 +4,7 @@ import loginAction from './actions/loginAction'
 import {connect} from 'react-redux'
 
 import Navbar from './components/navbar/Navbar'
-import Sidebar from './components/sidebar/Sidebar'
+import RootPage from './components/RootPage/RootPage'
 import Breadcrumb from './components/dashboard/Breadcrumb/Breadcrumb'
 import Footer from './components/dashboard/Footer/Footer'
 import Home from './components/home/Home'
@@ -17,14 +17,13 @@ class App extends React.Component {
   handleClick = (e) => {
     this.props.loginaction()
   }
-  
+
 
   render(){
     return(
       <div>
-        <Sidebar/>
-
-        </div>
+        <RootPage/>
+      </div>
   )
 }
 }

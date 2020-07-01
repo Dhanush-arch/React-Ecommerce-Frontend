@@ -12,7 +12,7 @@ import Home from '../home/Home'
 import ProductPage from '../ProductPage/ProductPage'
 import OrderPage from '../OrderPage/OrderPage'
 
-import './Sidebar.css'
+import './RootPage.css'
 
 
     function handlecloseclick(e){
@@ -30,7 +30,7 @@ import './Sidebar.css'
 
 
 
-function Sidebar() {
+function RootPage() {
     return (
       <div className="main row">
         <div className="sidebar " id="sidebar-id">
@@ -78,16 +78,16 @@ function Sidebar() {
           </div>
         </div>
           <hr/>
-        {/* <Home/> */}
+        <Home/>
         {/* <ProductPage/> */}
-        <OrderPage/>
+        {/* <OrderPage/> */}
         <Footer />
       </div>
     </div>
     )
 }
 
-export default Sidebar
+export default RootPage
 
 
 
