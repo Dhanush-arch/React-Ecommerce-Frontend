@@ -9,7 +9,7 @@ class ProductPage extends Component {
             <div className="row">
               <ProductImage />
               <ProductInfo />
-              <h5 className="col-12 footer mt-4">Similar Products</h5>
+              <h5 className="col-12 text-center mt-4">Similar Products</h5>
               <SimilarProducts/>
             </div>
 

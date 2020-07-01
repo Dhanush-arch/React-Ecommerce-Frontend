@@ -7,7 +7,10 @@ import Cartlogo from '../navbar/Cartlogo'
 import Breadcrumb from '../dashboard/Breadcrumb/Breadcrumb'
 import Searchbar from '../dashboard/Searchbar/Searchbar'
 import Footer from '../dashboard/Footer/Footer'
+// Replacables
 import Home from '../home/Home'
+import ProductPage from '../ProductPage/ProductPage'
+
 
 import './Sidebar.css'
 
@@ -65,7 +68,7 @@ function Sidebar() {
           </nav>
         </div>
         <div className="row">
-          <div className="col-md-5 col-sm-6 col-xs-6">
+          <div className="col-md-6 col-sm-6 col-xs-6">
             <Breadcrumb/>
           </div>
         </div>
@@ -75,7 +78,8 @@ function Sidebar() {
           </div>
         </div>
           <hr/>
-        <Home/>
+        {/* <Home/>*/}
+        <ProductPage/>
         <Footer />
       </div>
     </div>

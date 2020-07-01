@@ -5,7 +5,7 @@ import Img3 from '../../../assets/Img4.jpg'
 
 function SimilarProduct() {
     return (
-      <div class="container cst-text-center my-1">
+      <div class="container cst-text-center my-1 col-12">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
                 <div class="carousel-item row no-gutters active">
