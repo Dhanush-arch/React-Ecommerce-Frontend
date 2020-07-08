@@ -10,3 +10,12 @@
 .my-row{
   padding:10px 10px;
 }
+
+.my-card{
+  color: black;
+}
+
+.my-card:hover{
+  color: #282C34;
+  text-decoration: none;
+}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import ProductItem from './ProductItem'
-class Products extends Component {
-    render() {
-        return (
+
+function Products(){
+    return (
           <div className="row my-row pr-4 pl-2">
           <ProductItem />
           <ProductItem />
@@ -14,6 +14,5 @@ class Products extends Component {
           </div>
         )
     }
-}
 
 export default Products
