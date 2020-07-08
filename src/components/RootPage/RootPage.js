@@ -12,6 +12,9 @@ import Home from '../home/Home'
 import ProductPage from '../ProductPage/ProductPage'
 import OrderPage from '../OrderPage/OrderPage'
 
+//React-router setup
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+
 import './RootPage.css'
 
 
@@ -32,6 +35,7 @@ import './RootPage.css'
 
 function RootPage() {
     return (
+    <Router>
       <div className="main row">
         <div className="sidebar " id="sidebar-id">
           <ul>
@@ -40,10 +44,11 @@ function RootPage() {
                 <i class="fa fa-times" aria-hidden="true"></i>
               </button>
             </li>
-            <li className="link pt-5 mt-4"><a href="#" className="">Home</a>
-            </li>
-            <li className="link"><a href="#" className="">Product</a></li>
-            <li className="link"><a href="#" className="">Order</a></li>
+            <Link to="/">
+            <li className="link pt-5 mt-4"><a href="#" className="">Home</a></li>
+            </Link>
+            <Link to="/"><li className="link"><a href="#" className="">Product</a></li></Link>
+            <Link to="/orders"><li className="link"><a href="#" className="">Order</a></li></Link>
             <li className="link"><a href="#" className="">Helpline</a></li>
           </ul>
         </div>
@@ -78,12 +83,15 @@ function RootPage() {
           </div>
         </div>
           <hr/>
-        <Home/>
-        {/* <ProductPage/> */}
-        {/* <OrderPage/> */}
+          <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/orders" component={OrderPage}/>
+            <Route path="/Product/:id" component={ProductPage}/>
+          </Switch>
         <Footer />
       </div>
     </div>
+  </Router>
     )
 }
 

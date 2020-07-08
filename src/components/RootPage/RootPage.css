@@ -44,7 +44,7 @@
 
   background-image: url('../../assets/sidebarpic.jpg');
   background-size: cover;
-  
+
 }
 
 
@@ -82,7 +82,7 @@
 }
 
 .sidebar a:hover{
-  color: white;
+  color: #282C34;
 }
 
 @media screen and (max-width:750px){
