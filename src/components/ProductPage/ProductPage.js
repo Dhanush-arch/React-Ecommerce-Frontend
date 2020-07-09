@@ -23,6 +23,13 @@ function ProductPage(props){
         )
     }
 
+const mapStateToProps = (state) => {
+  return {
+    home_products : state.defaultProductReducer.products,
+    product_length : state.defaultProductReducer.pro_length
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     locationaction : (location) => {dispatch(getLocationAction(location))}
