@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
+import {useLocation, useParams} from 'react-router-dom'
+import {connect} from 'react-redux'
+import getLocationAction from '../../actions/getLocationAction'
+
 import ProductImage from './ProductImage/ProductImage'
 import ProductInfo from './ProductInfo/ProductInfo'
 import SimilarProducts from './SimilarProducts/SimilarProducts'
 
-function ProductPage({match}){
-  console.log(match.params.id)
+function ProductPage(props){
+    const local_location = useLocation()
+    let {id} = useParams()
+    if(local_location.pathname){
+      props.locationaction(local_location.pathname)
+    }
         return (
             <div className="row">
               <ProductImage />
@@ -15,5 +23,9 @@ function ProductPage({match}){
         )
     }
 
-
-export default ProductPage
+const mapDispatchToProps = (dispatch) => {
+  return {
+    locationaction : (location) => {dispatch(getLocationAction(location))}
+  }
+}
+export default connect(null, mapDispatchToProps)(ProductPage)

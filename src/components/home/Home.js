@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import getLocationAction from '../../actions/getLocationAction'
+import {useLocation} from 'react-router-dom'
 import Searchbar from '../dashboard/Searchbar/Searchbar'
 import Products from '../dashboard/Products/Products'
-// import Footer from '../dashboard/Footer/Footer'
-class Home extends Component {
-    render() {
-        return (
-              <Products />
-        )
-    }
+
+function Home(props){
+  const local_location = useLocation()
+  if(local_location.pathname){
+    props.locationaction(local_location.pathname)
+  }
+  return (
+        <Products />
+  )
 }
 
-export default Home
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    locationaction : (location) =>{dispatch(getLocationAction(location))}
+  }
+}
+export default connect(null, mapDispatchToProps)(Home)

@@ -1,9 +1,16 @@
 import React from 'react'
 
-function Signin() {
+function Signin(){
     return (
-            <button className="btn btn-dark">Sign in</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#staticBackdrop">Sign in</button>
     )
 }
 
-export default Signin
+
+export default Signin;
+
+
+
+
+//   <button className="btn btn-dark" onClick={this.handlelogin}>Sign
+  // in</button>
