@@ -1,6 +1,6 @@
 const defaultProductAction = () => {
   return (dispatch) =>{
-   return fetch('http://localhost:8000/home/product',{
+   return fetch('http://localhost:8000/home/product/0/',{
     method:'GET',
     headers: {
     'Content-Type': 'application/json'
