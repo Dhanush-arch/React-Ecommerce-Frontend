@@ -17,6 +17,7 @@ import OrderPage from '../OrderPage/OrderPage'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {useSelector, connect} from 'react-redux'
 import loginAction from '../../actions/loginAction';
+import ProtectedRoute from '../auth/ProtectedRoute'
 import './RootPage.css'
 
 class RootPage extends React.Component {
@@ -85,7 +86,7 @@ class RootPage extends React.Component {
           <hr/>
           <Switch>
             <Route path="/" exact component={Home}/>
-            <Route path="/orders" component={OrderPage}/>
+            <ProtectedRoute path="/orders" component={OrderPage}/>
             <Route path="/Product/:id" component={ProductPage}/>
           </Switch>
         <Footer />
