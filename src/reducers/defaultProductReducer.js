@@ -7,6 +7,7 @@ const initialstate = {
   pro_length : 0,
   start_page:null,
   end_page :null,
+  search_word:'',
 }
 
 

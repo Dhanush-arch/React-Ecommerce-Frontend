@@ -28,7 +28,7 @@ function PaginationNav(props) {
 
 
   function isclicked(e){
-    props.productPage(e.currentTarget.id, props.startPage, props.endPage)
+    props.productPage(e.currentTarget.id, props.startPage, props.endPage, props.search)
   }
 
 
@@ -40,10 +40,10 @@ function PaginationNav(props) {
     if(props.endPage < props.total_pages){
       if(props.total_pages-props.endPage <= 3){
         console.log("1if")
-        props.productPage(props.endPage,props.endPage, props.total_pages)
+        props.productPage(props.endPage,props.endPage, props.total_pages, props.search)
       }else{
         console.log("2if")
-        props.productPage(props.startPage+3, props.startPage+3,props.endPage+3)
+        props.productPage(props.startPage+3, props.startPage+3,props.endPage+3,props.search)
       }
     }
   }
@@ -51,9 +51,9 @@ function PaginationNav(props) {
   function handlePrev() {
     if(props.startPage > 1){
       if(props.startPage%3 == 0 ){
-      props.productPage(props.startPage-2,props.startPage-2,props.startPage)
+      props.productPage(props.startPage-2,props.startPage-2,props.startPage, props.search)
     }else {
-      props.productPage(props.startPage-3,props.startPage-3,props.startPage-1)
+      props.productPage(props.startPage-3,props.startPage-3,props.startPage-1, props.search)
     }
     }
 }
@@ -93,13 +93,14 @@ const mapStateToProps = (state) => {
     // pageDisplaySize : state.defaultProductReducer.page_display,
     startPage : state.defaultProductReducer.start_page,
     endPage : state.defaultProductReducer.end_page,
+    search : state.defaultProductReducer.search_word,
 
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    productPage  : (page, startpage, endpage) => {dispatch(defaultProductAction(page, startpage, endpage))}
+    productPage  : (page, startpage, endpage, searchproduct) => {dispatch(defaultProductAction(page, startpage, endpage, searchproduct))}
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PaginationNav)

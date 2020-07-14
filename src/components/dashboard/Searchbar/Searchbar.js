@@ -1,9 +1,13 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import defaultProductAction from '../../../actions/defaultProductAction';
 
-function Searchbar() {
+function Searchbar(props) {
 
-  function searchProduct() {
-    
+  function searchProduct(e) {
+    e.preventDefault()
+    const searchword = document.getElementById('searchBar').value
+    props.searchAction(searchword)
   }
   const style = {
     "border" : "#0AABF4 solid 1px"
@@ -20,5 +24,9 @@ function Searchbar() {
         </form>
     )
 }
-
-export default Searchbar
+const mapDispatchToProps = (dispatch) => {
+  return {
+    searchAction : (searchword) => {dispatch(defaultProductAction(1, 1, 3,searchword))}
+  }
+}
+export default connect(null, mapDispatchToProps)(Searchbar)
