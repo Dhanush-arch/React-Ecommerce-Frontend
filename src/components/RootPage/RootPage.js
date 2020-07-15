@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Img from '../../assets/sidebarpic.jpg'
+import Img from '../../assets/sidebarpic(1).jpg'
 import Signin from '../navbar/Signin'
 import Signup from '../navbar/Signup'
 import SigninModal from '../navbar/SigninModal'

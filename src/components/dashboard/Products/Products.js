@@ -23,7 +23,7 @@ function Products(props){
 const mapStateToProps = (state) => {
   return {
     home_products : state.defaultProductReducer.products,
-    product_length : state.defaultProductReducer.pro_length
+    product_length : state.defaultProductReducer.pro_length,
   }
 }
 

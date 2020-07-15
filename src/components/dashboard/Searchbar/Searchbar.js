@@ -1,13 +1,23 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import defaultProductAction from '../../../actions/defaultProductAction';
-
+import { useHistory } from 'react-router-dom'
 function Searchbar(props) {
-
+  let location = useHistory()
   function searchProduct(e) {
     e.preventDefault()
     const searchword = document.getElementById('searchBar').value
-    props.searchAction(searchword)
+    if(props.current_location === '/' || props.current_location === ''){
+      console.log("out of time out")
+      props.searchAction(searchword)
+    }else{
+      console.log("in of time out")
+        console.log(props.current_location)
+      location.push('/')
+      setTimeout(()=>{
+        props.searchAction(searchword)
+      },1)
+    }
   }
   const style = {
     "border" : "#0AABF4 solid 1px"
@@ -24,9 +34,15 @@ function Searchbar(props) {
         </form>
     )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    current_location : state.locationReducer.location
+  }
+}
 const mapDispatchToProps = (dispatch) => {
   return {
     searchAction : (searchword) => {dispatch(defaultProductAction(1, 1, 3,searchword))}
   }
 }
-export default connect(null, mapDispatchToProps)(Searchbar)
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar)
