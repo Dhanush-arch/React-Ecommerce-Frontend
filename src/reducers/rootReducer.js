@@ -3,7 +3,7 @@ import loginReducer from './loginReducer'
 import locationReducer from './locationReducer'
 import defaultProductReducer from './defaultProductReducer'
 import specificProductReducer from './specificProductReducer'
-
-const rootReducer = combineReducers({loginReducer, locationReducer, defaultProductReducer, specificProductReducer})
+import userIdReducer from './userIdReducer'
+const rootReducer = combineReducers({loginReducer, locationReducer, defaultProductReducer, specificProductReducer, userIdReducer})
 
 export default rootReducer;

@@ -17,6 +17,7 @@ import OrderPage from '../OrderPage/OrderPage'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {useSelector, connect} from 'react-redux'
 import loginAction from '../../actions/loginAction';
+import userIdAction from '../../actions/userIdAction'
 import ProtectedRoute from '../auth/ProtectedRoute'
 import './RootPage.css'
 
@@ -34,9 +35,13 @@ class RootPage extends React.Component {
         document.getElementById('close-btn').classList.add("display-close-btn")
         document.getElementById("content-id").classList.add("move-content")
       }
+
   render(){
     console.log("render")
     console.log(this.props)
+    if(this.props.isloggedin){
+      this.props.useridaction(this.props.keys)
+    }
     return (
     <Router>
       <div className="main row">
@@ -107,7 +112,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
   return{
-    loginaction: (email,password) => {dispatch(loginAction(email, password))}
+    loginaction: (email,password) => {dispatch(loginAction(email, password))},
+    useridaction : (key) => {dispatch(userIdAction(key))}
   }
 }
 

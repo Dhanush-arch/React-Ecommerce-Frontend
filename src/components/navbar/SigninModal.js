@@ -57,7 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
   return{
-    loginaction: (email,password) => {dispatch(loginAction(email, password))}
+    loginaction: (email,password) => {dispatch(loginAction(email, password))},
   }
 }
 
