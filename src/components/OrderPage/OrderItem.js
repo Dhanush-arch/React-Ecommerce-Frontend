@@ -4,10 +4,11 @@ import Img from '../../assets/img3.jpg'
 
 class OrderItem extends Component {
     render() {
+      console.log(this.props)
         return (
           <div className="row">
             <div className="col-1">
-              <p>1</p>
+              <p>{this.props.id}</p>
             </div>
             <div className="col-2">
               <p>27/01/2020</p>
@@ -20,7 +21,7 @@ class OrderItem extends Component {
               <p>1</p>
             </div>
             <div className="col-2">
-              <p>$1200</p>
+              <p>${this.props.totalPrice}</p>
             </div>
             <div className="col-2">
               <p>Dispatched</p>

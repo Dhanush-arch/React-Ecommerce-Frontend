@@ -1,9 +1,6 @@
 const initialstate = {
-  order : null,
+  orders : null,
 }
-
-
-
 
 const orderReducer = (state=initialstate, action) => {
   switch(action.type){
@@ -13,3 +10,5 @@ const orderReducer = (state=initialstate, action) => {
       return state
   }
 }
+
+export default orderReducer
