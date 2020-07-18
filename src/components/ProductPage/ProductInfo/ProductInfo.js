@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-
+import addOrderAction from '../../../actions/addOrderAction'
 class ProductInfo extends Component {
+
+  handleAddToCart = (e) => {
+    console.log("in info page")
+    console.log(this.props)
+    if(this.props.userid ){
+      this.props.addToCart(this.props.product_details.discountPrice, this.props.userid, this.props.product_details.productID,1, 'dispatched', this.props.keys)
+    }
+  }
     render() {
       console.log(this.props.product_details)
         return (
@@ -17,7 +25,7 @@ class ProductInfo extends Component {
                   <h5>${this.props.product_details.discountPrice}</h5>
                 </div>
                 <button className="btn btn-outline-info">Buy</button>
-                <button className="btn btn-outline-info ml-2">Add to Cart</button>
+                <button className="btn btn-outline-info ml-2" onClick={this.handleAddToCart}>Add to Cart</button>
               </div>
             </div>
         )
@@ -26,8 +34,14 @@ class ProductInfo extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    product_details : state.specificProductReducer.product_detail
+    product_details : state.specificProductReducer.product_detail,
+    userid : state.userIdReducer.userId,
+    keys : state.loginReducer.key,
   }
 }
-
-export default connect(mapStateToProps)(ProductInfo)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart : (productPrice, userID, productID, quantity, status, userkey) => {dispatch(addOrderAction(productPrice, userID, productID, quantity, status, userkey))}
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ProductInfo)

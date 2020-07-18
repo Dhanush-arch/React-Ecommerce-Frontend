@@ -18,13 +18,13 @@ class OrderItem extends Component {
               <p>Macbook pro</p>
             </div>
             <div className="col-2">
-              <p>1</p>
+              <p>{this.props.quantity}</p>
             </div>
             <div className="col-2">
               <p>${this.props.totalPrice}</p>
             </div>
             <div className="col-2">
-              <p>Dispatched</p>
+              <p>{this.props.statusOfProduct}</p>
             </div>
           </div>
         )

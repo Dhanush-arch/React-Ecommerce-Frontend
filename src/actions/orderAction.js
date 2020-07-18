@@ -11,9 +11,13 @@ const orderAction = (userId, key) => {
  })
  .then(response => response.json())
  .then(data => {
-   if(data[0].id){
-    dispatch({type:'GET_ORDERS',payload:{orders:data}})
-   }
+  try {
+    if(data[0].id){
+     dispatch({type:'GET_ORDERS',payload:{orders:data}})
+    }
+  } catch(e){
+  console.log("no orders")
+  }
  })
   }
 }
