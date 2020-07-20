@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import addOrderAction from '../../../actions/addOrderAction'
+import similarProductsAction from '../../../actions/similarProductsAction'
 class ProductInfo extends Component {
 
   handleAddToCart = (e) => {
@@ -12,6 +13,10 @@ class ProductInfo extends Component {
   }
     render() {
       console.log(this.props.product_details)
+      if(this.props.product_details.productCategory){
+        console.log("in info");
+        this.props.getSimilarProducts(this.props.product_details.productCategory)
+      }
         return (
             <div className="col-6">
               <div className="row pr-md-5 pr-sm-4 mx-2">
@@ -41,7 +46,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart : (productPrice, userID, productID, quantity, status, userkey) => {dispatch(addOrderAction(productPrice, userID, productID, quantity, status, userkey))}
+    addToCart : (productPrice, userID, productID, quantity, status, userkey) => {dispatch(addOrderAction(productPrice, userID, productID, quantity, status, userkey))},
+    getSimilarProducts : (search) => {dispatch(similarProductsAction(search))}
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ProductInfo)

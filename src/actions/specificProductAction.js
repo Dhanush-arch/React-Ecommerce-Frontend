@@ -7,7 +7,9 @@ const specificProductAction = (id) => {
   },
   })
   .then(response => response.json())
-  .then(data=> {dispatch({type:'SET_SPECIFIC_PRODUCT',payload:{product_detail:data}})});
+  .then(data=> {
+  dispatch({type:'SET_SPECIFIC_PRODUCT',payload:{product_detail:data}});
+   });
   }
 }
 
