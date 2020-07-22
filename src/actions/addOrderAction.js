@@ -36,7 +36,7 @@ const addOrderAction = (totalPrice, orderedUserID, orderedProductID, quantity, s
       },
        body:JSON.stringify(obj)
      }).then(response => response.json())
-       .then(response => console.log(response))
+       .then(data => {dispatch({type:'SET_ORDER',payload:{order:data}})})
    } else {
       return fetch(`http://localhost:8000/home/order/${orderedUserID}/`,{
         method:'POST',
@@ -46,7 +46,7 @@ const addOrderAction = (totalPrice, orderedUserID, orderedProductID, quantity, s
         },
         body:JSON.stringify(obj)
         }).then(response => response.json())
-        .then(response => console.log(response))
+        .then(data => {dispatch({type:'SET_ORDER',payload:{order:data}})})
       }
     })
   }

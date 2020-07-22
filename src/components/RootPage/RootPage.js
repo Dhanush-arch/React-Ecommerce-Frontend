@@ -18,6 +18,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {useSelector, connect} from 'react-redux'
 import loginAction from '../../actions/loginAction';
 import userIdAction from '../../actions/userIdAction'
+import getOrdersNoAction from '../../actions/getOrdersNoAction'
 import ProtectedRoute from '../auth/ProtectedRoute'
 import './RootPage.css'
 
@@ -41,6 +42,11 @@ class RootPage extends React.Component {
     console.log(this.props)
     if(this.props.isloggedin){
       this.props.useridaction(this.props.keys)
+      if(this.props.userid){
+        if(this.props.ordersLength === null){
+          this.props.getOrderslength(this.props.userid, this.props.keys)
+        }
+      }
     }
     return (
     <Router>
@@ -107,13 +113,16 @@ const mapStateToProps = (state) => {
 	return {
 		keys: state.loginReducer.key,
 		isloggedin: state.loginReducer.islogedin,
+    userid : state.userIdReducer.userId,
+    ordersLength : state.getOrdersNoReducer.orders_length,
 	}
 }
 
 const mapDispatchToProps = (dispatch) =>{
   return{
     loginaction: (email,password) => {dispatch(loginAction(email, password))},
-    useridaction : (key) => {dispatch(userIdAction(key))}
+    useridaction : (key) => {dispatch(userIdAction(key))},
+    getOrderslength : (id, key) => {dispatch(getOrdersNoAction(id, key))}
   }
 }
 

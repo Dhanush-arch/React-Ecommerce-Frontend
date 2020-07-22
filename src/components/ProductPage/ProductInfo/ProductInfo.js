@@ -6,7 +6,6 @@ class ProductInfo extends Component {
 
   handleAddToCart = (e) => {
     console.log("in info page")
-    console.log(this.props)
     if(this.props.userid ){
       this.props.addToCart(this.props.product_details.discountPrice, this.props.userid, this.props.product_details.productID,1, 'dispatched', this.props.keys)
     }
@@ -36,7 +35,6 @@ class ProductInfo extends Component {
         )
     }
 }
-
 const mapStateToProps = (state) => {
   return {
     product_details : state.specificProductReducer.product_detail,

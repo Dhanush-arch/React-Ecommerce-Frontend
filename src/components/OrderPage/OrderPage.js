@@ -17,7 +17,7 @@ function OrderPage(props) {
   useEffect(()=>{
     props.getorders(props.userID, props.keys)
   },[])
-  let order_row = []
+  let order_row = [];
   if(props.orderItems){
       if(props.productName === null){
         let id_row=[];
@@ -26,7 +26,15 @@ function OrderPage(props) {
         }
         props.getName(id_row)
       }
+      
       if(props.productName !== null){
+      if(props.orderItems.length !== props.productName.length){
+        let id_row=[];
+        for(let j=0;j<props.orderItems.length;j++){
+            id_row.push(props.orderItems[j].orderedProductID)
+        }
+        props.getName(id_row)
+      }
       for(let i=0;i< props.orderItems.length;i++){
         order_row.push(<OrderItem {...props.orderItems[i]} {...props.productName[i]}/>)
       }

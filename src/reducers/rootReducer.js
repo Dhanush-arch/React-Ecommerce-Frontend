@@ -7,6 +7,8 @@ import userIdReducer from './userIdReducer'
 import orderReducer from './orderReducer'
 import similarProductsReducer from './similarProductsReducer'
 import orderedProductNames from './orderedProductNames'
-const rootReducer = combineReducers({loginReducer, locationReducer, defaultProductReducer, specificProductReducer, userIdReducer, orderReducer, similarProductsReducer, orderedProductNames})
+import getOrdersNoReducer from './getOrdersNoReducer'
+import addOrderReducer from './addOrderReducer'
+const rootReducer = combineReducers({loginReducer, locationReducer, defaultProductReducer, specificProductReducer, userIdReducer, orderReducer, similarProductsReducer, orderedProductNames, getOrdersNoReducer, addOrderReducer})
 
 export default rootReducer;
