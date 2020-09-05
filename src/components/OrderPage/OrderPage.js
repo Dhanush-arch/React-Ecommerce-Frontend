@@ -36,7 +36,18 @@ function OrderPage(props) {
         props.getName(id_row)
       }
       for(let i=0;i< props.orderItems.length;i++){
-        order_row.push(<OrderItem {...props.orderItems[i]} {...props.productName[i]}/>)
+      console.log("in loop")
+        for(let j=0;j< props.productName.length;j++){
+            console.log(props.orderItems[i]);
+            console.log(props.productName[j]);
+            if(props.orderItems[i].orderedProductID === props.productName[j].productID){
+                
+                order_row.push(<OrderItem {...props.orderItems[i]} {...props.productName[j]}/>)
+                break;
+            }
+        }
+        console.log("in loop")
+        
       }
     }
   }
@@ -53,7 +64,8 @@ const mapStateToProps = (state) => {
     keys : state.loginReducer.key,
     userID : state.userIdReducer.userId,
     orderItems : state.orderReducer.orders,
-    productName : state.orderedProductNames.ordersProductName
+    productName : state.orderedProductNames.ordersProductName,
+    orderedNo : state.getOrdersNoReducer.orders_length,
   }
 }
 const mapDispatchToProps = (dispatch) => {

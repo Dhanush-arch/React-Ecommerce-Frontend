@@ -2,7 +2,7 @@ const getOrderedProductName = (getlist) => {
  let word = '';
  let list = [];
   for(let i=0;i<getlist.length;i++){
-   
+
    if(i+1 === getlist.length){
      word += "fororder="+getlist[i]
    } else{
@@ -19,6 +19,8 @@ const getOrderedProductName = (getlist) => {
   })
   .then(response => response.json())
   .then(data=> {
+    console.log("in action of names");
+    console.log(data);
   dispatch({type:'SET_PRODUCTNAMES',payload:{ordersProductName:data}})
   });
   }

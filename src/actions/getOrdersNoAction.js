@@ -14,7 +14,7 @@ const getOrdersNoAction = (id, key) => {
      dispatch({type:'GET_ORDERS_NO',payload:{orders_length:data.length}})
     }
   } catch(e){
-  console.log("no orders")
+  dispatch({type:'GET_ORDERS_NO',payload:{orders_length:null}})
   }
  })
   }

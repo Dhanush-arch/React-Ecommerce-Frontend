@@ -9,7 +9,7 @@ function OrderHeader() {
         <div className="col-2">
           <h6>Date</h6>
         </div>
-        <div className="col-3">
+        <div className="col-2">
           <h6>Product</h6>
         </div>
         <div className="col-2">
@@ -20,6 +20,9 @@ function OrderHeader() {
         </div>
         <div className="col-2">
           <h6>Status</h6>
+        </div>
+        <div className="col-1">
+          <h6>Action</h6>
         </div>
       </div>
     )

@@ -24,7 +24,8 @@ const mapStateToProps = (state) => {
     orders : state.getOrdersNoReducer.orders_length,
     keys : state.loginReducer.key,
     userid : state.userIdReducer.userId,
-    orders_get : state.addOrderReducer.order
+    orders_get : state.addOrderReducer.order,
+    order : state.orderReducer.orders
   }
 }
 
