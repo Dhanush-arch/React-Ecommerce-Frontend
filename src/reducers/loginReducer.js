@@ -1,6 +1,6 @@
 const initialstate = {
-  key:434757,
-  islogedin: false
+  key:'',
+  islogedin:false,
 }
 
 const loginReducer = (state=initialstate, action) => {

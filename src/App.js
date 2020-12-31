@@ -1,8 +1,5 @@
 import React from 'react';
 
-import loginAction from './actions/loginAction'
-import {connect} from 'react-redux'
-
 import Navbar from './components/navbar/Navbar'
 import RootPage from './components/RootPage/RootPage'
 import Breadcrumb from './components/dashboard/Breadcrumb/Breadcrumb'
@@ -14,11 +11,6 @@ import './App.css';
 
 class App extends React.Component {
 
-  handleClick = (e) => {
-    this.props.loginaction()
-  }
-
-
   render(){
     return(
       <div>
@@ -28,19 +20,7 @@ class App extends React.Component {
 }
 }
 
-const mapStateTorProps = (state) =>{
-  return {
-    keys : state.key,
-    islogedin : state.islogedin,
-  }
-}
-
-const mapDispatchToProps = (dispatch) =>{
-  return{
-    loginaction: () => {dispatch(loginAction())}
-  }
-}
-export default connect(mapStateTorProps,mapDispatchToProps)(App);
+export default App;
 
 
 

@@ -1,0 +1,10 @@
+.trash-icon{
+    height:40px;
+    width:40px;
+    color:#FE1F40;
+    padding:2px;
+}
+.trash-icon:hover{
+    color:#D91828;
+   
+}

@@ -1,0 +1,16 @@
+.my-page-link{
+  color:#323234;
+}
+
+.my-page-item:hover{
+  border-radius: 0px;
+  /* border:#0AABF4 solid 0.010em; */
+}
+
+.my-active-link{
+  color:#0AABF4;
+}
+
+.my-active-link-prev{
+  border-radius: 0px;
+}

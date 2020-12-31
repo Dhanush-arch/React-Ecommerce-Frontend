@@ -5,3 +5,13 @@
 .order-col{
   min-width:100px
 }
+
+.my_order_div{
+  text-decoration:none;
+  color:#212529;
+}
+
+.my_order_div:hover{
+  text-decoration:none;
+  color:#212529;
+}
